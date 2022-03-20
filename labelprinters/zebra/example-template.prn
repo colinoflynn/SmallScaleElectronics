@@ -1,0 +1,15 @@
+﻿CT~~CD,~CC^~CT~
+^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ
+^XA
+^MMT
+^PW1200
+^LL0900
+^LS0
+^FO300,64^GF${some_graphic}
+^FT1100,141^A0R,75,74^FH\^FDSome Fixed String^FS
+^FT800,51^A0R,42,40^FH\^FD${test_string1}^FS
+^FT750,51^A0R,42,40^FH\^FD${test_string2}^FS
+^FT950,49^A0R,42,40^FH\^FDBoard S/N: ${SN}^FS
+^FT900,49^A0R,42,40^FH\^FDTest Date: ${date}^FS
+^FT250,49^A0R,42,40^FH\^FD-----------------------^FS
+^PQ1,0,1,Y^XZ

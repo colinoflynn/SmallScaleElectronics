@@ -1,12 +1,14 @@
 # Small Scale Electronics
 
-This repository holds various information, scripts, etc learned during building small scale electronics. Most of this was learned when building [newae.com](newae.com) and associated projects.
+This repository holds various information, scripts, etc learned during building small scale electronics. Most of this was learned when building [newae.com](https://newae.com) and associated projects.
 
 This will eventually be turned into a book form, and this repository will be the support material for certain chapters.
 
+This is currently in progress and will be updated over time.
+
 ## Directory
 
-* `Barcoding` covers scripts for printers
+* `labelprinters` covers scripts for printers
 
 ## Book Plans
 
