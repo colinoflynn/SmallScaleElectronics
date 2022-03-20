@@ -1,5 +1,12 @@
 # Zebra Label Printer Templates
 
+*Updates eventually coming*
+
+The following is some short notes on printing labels with our GTX430t (GX43-102410-000) label printer. This printed uses the nice Zebra ZPL format data. Unlike other printers (Brady) it is very well documented how to use this data format, you can get the ZPL docs from Zebra.
+
+To simplify things, I use a template that inserts text into the ZPL file and sends it to the printer. This repo is some quick notes on
+how I do that.
+
 ## Making Templates
 
 The easiest thing to do is to make a template in the [Zebra Designer software](https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-designer.html), the 'Essentials' verion is free.
@@ -42,6 +49,8 @@ The graphic one is special as it will be replaced with a base-64 encoded graphic
 
 ## Using The Python
 
+Here is a simple example of string replacements:
+
 ```
 
 anotherthing = "blah"
@@ -62,7 +71,9 @@ z = zebra_utils.Zebra()
 z.print_label(zpl)
 ```
 
-If you need to use the datamatric or graphic replacements, you'll need to use the `create_datamatrix_field_string` or `create_image_field_string` to generate the base64 encoded data. Once you have the string it's simply inserted similar to
+### Datamatrix Codes / Graphics
+
+If you need to use the datamatrix or graphic replacements, you'll need to use the `create_datamatrix_field_string` or `create_image_field_string` to generate the base64 encoded data. Once you have the string it's simply inserted similar to
 any other string.
 
 E.g., for datamatrix:
@@ -79,3 +90,12 @@ In this example `dm_str` would be simply inserted into the `zpl_replace` diction
 When designing labels with these graphics, you can use the same method of inserting some placeholder image. See the above
 example for the expected format - normally just delete everything after `64^GF` on the graphics line, and insert the
 placeholder key.
+
+## Barcodes
+
+The zebra format includes some barcode support (it does not include the required datamatrix format for ECIA compatable labels, hence
+the graphics hack above for them).
+
+But if you are using linear barcodes or supported 2D barcodes, the Zebra engine will render your text into the barcode. Again you
+can just create a template in the Zebra SW, and insert the 'string' into the ZPL file. The zebra engine will render that into a 2D
+barcode and print on your label.
